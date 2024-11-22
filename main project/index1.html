@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll with Parallax</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .div1 {
+            height: 100vh;
+            width: 100vw;
+            background: #95ffe7;
+            background-image: url(http://Wallpaper-House.com/data/out/7/wallpaper2you_152521.jpg);
+            background-position: 0% -50%;
+            background-size: cover;
+        }
+
+        .div2 {
+            display: flex;
+            height: 100vh;
+            width: 300vw;
+            position: relative;
+        }
+
+        .div2 div {
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .div21 {
+            background-color: #f3ff3e;
+            background-image: url(http://Wallpaper-House.com/data/out/7/wallpaper2you_152536.jpg);
+        }
+
+        .div22 {
+            background-color: #ff7dff;
+            background-image: url(http://Wallpaper-House.com/data/out/7/wallpaper2you_152549.jpg);
+        }
+
+        .div23 {
+            background-color: #00ff72;
+            background-image: url(http://Wallpaper-House.com/data/out/7/wallpaper2you_152576.jpg);
+        }
+
+        .div3 {
+            height: 100vh;
+            width: 100vw;
+            background: #39adff;
+            background-image: url(http://Wallpaper-House.com/data/out/7/wallpaper2you_152580.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+    <!-- Include GSAP and ScrollMagic Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmagic/2.0.8/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js" integrity="sha512-docBEeq28CCaXCXN7cINkyQs0pRszdQsVBFWUd+pLNlEk3LDlSDDtN7i1H+nTB8tshJPQHS0yu0GW9YGFd/CRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="div21">.</div>
+        <div class="div22">.</div>
+        <div class="div23">.</div>
+    </div>
+    <div class="div3"></div>
+
+    <script>
+        // Ensure the viewport width is available for calculation
+        var vwWidth = window.innerWidth;
+
+        // Initialize ScrollMagic Controller
+        var controller = new ScrollMagic.Controller();
+
+        // Scene 1: Parallax Scroll (Vertical Scroll on div1)
+        var parallaxScrolling = gsap.timeline()
+            .to(".div1", { y: 100, ease: "power1.out", duration: 1 });
+
+        new ScrollMagic.Scene({
+            triggerElement: ".div1",
+            duration: "100%",
+            triggerHook: 0
+        })
+            .setTween(parallaxScrolling)
+            .addTo(controller);
+
+        // Scene 2: Horizontal Scroll (Horizontal Scroll on div2)
+        var horizontalSlide = gsap.timeline()
+            .to(".div2", { x: -vwWidth, ease: "power1.out", duration: 1 })
+            .to(".div2", { x: -2 * vwWidth, ease: "power1.out", duration: 1 });
+
+        new ScrollMagic.Scene({
+            triggerElement: ".div2",
+            duration: "350%", // Adjust the duration for how far you want to scroll horizontally
+            triggerHook: 0
+        })
+            .setPin(".div2")
+            .setTween(horizontalSlide)
+            .addTo(controller);
+    </script>
+</body>
+
+</html>

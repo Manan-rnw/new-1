@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: montserrat;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: grey !important;
+}
+
+.s-1 {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.463)), url(./assest/images/image.png);
+    background-size: cover;
+    height: 100vh;
+    padding-top: 250px;
+    padding-left: 100px;
+}
+
+.s-1 h1 {
+    color: white;
+    font-size: 65px;
+    font-weight: 700;
+}
+
+.s-1 p {
+    color: white;
+}
+
+.s-1 button {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+
+.s-1 button:hover {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+
+.s-2 {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.463)), url(./assest/images/Hero\ Section\ \(3\).png);
+    background-size: cover;
+    height: 100vh;
+    padding-top: 250px;
+    padding-left: 100px;
+}
+
+.s-2 h1 {
+    color: white;
+    font-size: 65px;
+    font-weight: 700;
+}
+
+.s-2 p {
+    color: white;
+}
+
+.s-2 button {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+
+.s-2 button:hover {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+
+.section-2,
+.section-7,
+.section-6-main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.img-1 {
+    width: 100% !important;
+    height: 760px;
+}
+
+.section-6 {
+    background: #121B37;
+    color: white;
+    height: 100vh;
+
+}
+
+.card-1 {
+    background: #4F65AA40;
+    height: 440px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 409px !important;
+}
+
+.card-1 img , h3 ,p {
+    margin-top: 15px;
+}
+.card-1 p {
+    color: white !important;
+}
+
+.slick-prev {
+    position: absolute;
+    left: 80%;
+    top: -50px;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.slick-next {
+    position: absolute;
+    top: -50px;
+    right: 15%;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+
+.slick-next:before,
+.slick-prev:before {
+    margin-left: -18px;
+    font-family: slick;
+    /* margin-top: -48px; */
+    font-size: 38px;
+    line-height: 1;
+    opacity: .75;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mainn {
+    overflow-x: hidden;
+    /* height: 100vh; */
+    margin-top: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.horizontal-sliderss {
+    display: flex;
+    flex-wrap: no-wrap;
+    width: 550%;
+    overflow-x: hidden;
+}
+
+
+.slides .row img {
+    height: 700px;
+    width: 580px;
+}
+
+.slides .row {
+    margin-left: 90px;
+    /* height: 600px;
+    width: 90%; */
+    width: 1300px;
+
+}
+
+.contain {
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.btn-1 {
+    position: absolute;
+    border: solid 2px black;
+    bottom: 50px;
+    right: 250px;
+    z-index: 20;
+    border-radius: 50%;
+    padding: 8px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+
+.btn-2 {
+    position: absolute;
+    border: solid 2px black;
+    border-radius: 50%;
+    bottom: 50px;
+    right: 160px;
+    z-index: 20;
+    padding: 8px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+
+input , textarea {
+    border-radius: 0px !important;
+    border: none !important;
+    border-bottom: solid 2px black !important;
+    outline: none !important;
+    box-shadow: 0px 0px 0px 0px !important;
+
+}
+
+input:hover {
+    outline: none !important;
+    box-shadow: 0px 0px 0px 0px !important;
+
+}
+@media screen and (orientation: landscape) {
+    .carousel img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width : 767px) {
+   
+   
+    .s-1 {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.463)), url(./assest/images/image.png);
+        background-size: cover;
+        height: 100vh;
+        padding-top: 250px;
+        padding-left: 50px;
+    }
+
+    .s-1 h1 {
+        color: white;
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .s-2 h1 {
+        color: white;
+        font-size: 35px;
+        font-weight: 700;
+    }
+}

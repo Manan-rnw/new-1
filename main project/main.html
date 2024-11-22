@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .main {
+            overflow-x: hidden;
+        }
+
+        .horizontal-sliders {
+            display: flex;
+            flex-wrap: no-wrap;
+            width: 500%;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            height: 80vh;
+            width: 100%;
+        }
+
+        .slide:nth-child(2n) {
+            background-color: aqua;
+        }
+
+        .next-block {
+            height: 100vh;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="horizontal-sliders">
+            <div class="slide" style="background-color: red;">Red</div>
+            <div class="slide" style="background-color: blue;">Blue</div>
+            <div class="slide" style="background-color: green;">green</div>
+            <div class="slide" style="background-color: yellow;">yellow</div>
+            <div class="slide" style="background-color: brown;">brown</div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        let sections = gsap.utils.toArray(".slide");
+
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".horizontal-sliders",
+                pin: ".main",
+                pinSpacing: true,
+                scrub: 1,
+                end: "+=3000",
+            }
+        });
+
+        gsap.to('.next-block', {
+            backgroundColor: 'tomato',
+            scrollTrigger: {
+                trigger: '.next-block',
+                pinnedContainer: ".main",
+                start: 'top 50%',
+                toggleActions: 'play none reset none',
+            }
+        })
+    </script>
+</body>
+
+</html>

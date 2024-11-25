@@ -93,9 +93,12 @@ p {
     width: 409px !important;
 }
 
-.card-1 img , h3 ,p {
+.card-1 img,
+h3,
+p {
     margin-top: 15px;
 }
+
 .card-1 p {
     color: white !important;
 }
@@ -129,33 +132,7 @@ p {
     -webkit-font-smoothing: antialiased;
 }
 
-.mainn {
-    overflow-x: hidden;
-    /* height: 100vh; */
-    margin-top: 30px;
-    /* margin-bottom: 30px; */
-}
 
-.horizontal-sliderss {
-    display: flex;
-    flex-wrap: no-wrap;
-    width: 550%;
-    overflow-x: hidden;
-}
-
-
-.slides .row img {
-    height: 700px;
-    width: 580px;
-}
-
-.slides .row {
-    margin-left: 90px;
-    /* height: 600px;
-    width: 90%; */
-    width: 1300px;
-
-}
 
 .contain {
     margin: 0 auto;
@@ -188,7 +165,8 @@ p {
     background-color: transparent;
 }
 
-input , textarea {
+input,
+textarea {
     border-radius: 0px !important;
     border: none !important;
     border-bottom: solid 2px black !important;
@@ -196,12 +174,63 @@ input , textarea {
     box-shadow: 0px 0px 0px 0px !important;
 
 }
+.mnan .slick-next {
+    z-index: 5;
+    right: -40px;
+    top: 760px;
+    padding: 20px;
+    position: absolute;
+}
+.mnan .slick-prev {
+    left: 95%;
+  
+    /* position: absolute; */
+    top: 760px;
+    z-index: 5;
+    padding: 20px;
+}
+
+.mnan {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mnan .slick-next:before{
+    margin-left: -18px;
+    font-family: slick;
+    /* margin-top: -48px; */
+    font-size: 38px;
+    line-height: 1;
+    opacity: .75;
+    color: black;
+    background-color: white;
+    
+    border-radius: 50%;
+    padding: 9px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mnan .slick-prev:before{
+    margin-left: -18px;
+    font-family: slick;
+    /* margin-top: -48px; */
+    font-size: 38px;
+    line-height: 1;
+    opacity: .75;
+    color: black;
+    background-color: white;
+    
+    border-radius: 50%;
+    padding: 9px;
+    -webkit-font-smoothing: antialiased;
+}
 
 input:hover {
     outline: none !important;
     box-shadow: 0px 0px 0px 0px !important;
 
 }
+
 @media screen and (orientation: landscape) {
     .carousel img {
         height: 60vh;
@@ -209,8 +238,8 @@ input:hover {
 }
 
 @media screen and (max-width : 767px) {
-   
-   
+
+
     .s-1 {
         background: linear-gradient(to right, rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.463)), url(./assest/images/image.png);
         background-size: cover;
